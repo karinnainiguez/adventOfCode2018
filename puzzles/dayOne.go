@@ -1,6 +1,6 @@
-package main
+package puzzles
 
-func endingFrequency(calibrations []int) int {
+func EndingFrequency(calibrations []int) int {
 	st := 0
 	for _, c := range calibrations {
 		st += c
@@ -8,7 +8,7 @@ func endingFrequency(calibrations []int) int {
 	return st
 }
 
-func repeatedFrequency(calibrations []int) int {
+func RepeatedFrequency(calibrations []int) int {
 	seen := make(map[int]bool)
 	st := 0
 	seen[st] = true

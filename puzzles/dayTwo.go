@@ -1,8 +1,8 @@
-package main
+package puzzles
 
 import "strings"
 
-func checkSum(packageIDs []string) int {
+func CheckSum(packageIDs []string) int {
 
 	check2 := 0
 	check3 := 0
@@ -33,7 +33,7 @@ func checkSum(packageIDs []string) int {
 	return check2 * check3
 }
 
-func commonLetters(packageIDs []string) string {
+func CommonLetters(packageIDs []string) string {
 	str1, str2 := similarStrings(packageIDs)
 	common := commonStrings(str1, str2)
 	return common

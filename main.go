@@ -2,22 +2,24 @@ package main
 
 import (
 	"fmt"
+
+	"github.com/karinnainiguez/adventOfCode2018/puzzles"
 )
 
 func main() {
 
-	// // DAY ONE
-	// parsedDayOne := parseCalibrations()
-	// dayOnePuzzleOne := endingFrequency(parsedDayOne)
-	// fmt.Println(dayOnePuzzleOne)
-	// dayOnePuzzleTwo := repeatedFrequency(parsedDayOne)
-	// fmt.Println(dayOnePuzzleTwo)
+	// DAY ONE
+	parsedDayOne := parseCalibrations()
+	dayOnePuzzleOne := puzzles.EndingFrequency(parsedDayOne)
+	fmt.Println(dayOnePuzzleOne)
+	dayOnePuzzleTwo := puzzles.RepeatedFrequency(parsedDayOne)
+	fmt.Println(dayOnePuzzleTwo)
 
 	// DAY TWO
 	parsedDayTwo := parsePackageIDs()
-	dayTwoPuzzleOne := checkSum(parsedDayTwo)
+	dayTwoPuzzleOne := puzzles.CheckSum(parsedDayTwo)
 	fmt.Println(dayTwoPuzzleOne)
-	dayTwoPuzzleTwo := commonLetters(parsedDayTwo)
+	dayTwoPuzzleTwo := puzzles.CommonLetters(parsedDayTwo)
 	fmt.Println(dayTwoPuzzleTwo)
 
 }

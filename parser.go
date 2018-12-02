@@ -9,7 +9,7 @@ import (
 )
 
 func parseCalibrations() []int {
-	csvFile, _ := os.Open("dayOneInput.csv")
+	csvFile, _ := os.Open("inputs/dayOneInput.csv")
 	reader := csv.NewReader(bufio.NewReader(csvFile))
 	var calibrations []int
 	for {
@@ -24,7 +24,7 @@ func parseCalibrations() []int {
 }
 
 func parsePackageIDs() []string {
-	csvFile, _ := os.Open("dayTwoInput.csv")
+	csvFile, _ := os.Open("inputs/dayTwoInput.csv")
 	reader := csv.NewReader(bufio.NewReader(csvFile))
 	var packageIDs []string
 	for {
