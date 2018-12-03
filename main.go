@@ -22,4 +22,11 @@ func main() {
 	dayTwoPuzzleTwo := puzzles.CommonLetters(parsedDayTwo)
 	fmt.Println(dayTwoPuzzleTwo)
 
+	// DAY Three
+	parsedDayThree := parseClaimAreas()
+	dayThreePuzzleOne := puzzles.OverlappingFabric(parsedDayThree)
+	fmt.Println(dayThreePuzzleOne)
+	dayThreePuzzleTwo := puzzles.NonOverlappingClaim(parsedDayThree)
+	fmt.Println(dayThreePuzzleTwo)
+
 }

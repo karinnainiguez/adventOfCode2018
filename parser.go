@@ -37,3 +37,17 @@ func parsePackageIDs() []string {
 	}
 	return packageIDs[1:]
 }
+
+func parseClaimAreas() [][]string {
+	csvFile, _ := os.Open("inputs/dayThreeInput.csv")
+	reader := csv.NewReader(bufio.NewReader(csvFile))
+	var claimAreas [][]string
+	for {
+		line, err := reader.Read()
+		if err == io.EOF {
+			break
+		}
+		claimAreas = append(claimAreas, line)
+	}
+	return claimAreas[1:]
+}
