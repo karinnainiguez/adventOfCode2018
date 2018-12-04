@@ -8,25 +8,34 @@ import (
 
 func main() {
 
-	// DAY ONE
-	parsedDayOne := parseCalibrations()
-	dayOnePuzzleOne := puzzles.EndingFrequency(parsedDayOne)
-	fmt.Println(dayOnePuzzleOne)
-	dayOnePuzzleTwo := puzzles.RepeatedFrequency(parsedDayOne)
-	fmt.Println(dayOnePuzzleTwo)
+	// // DAY ONE
+	// parsedDayOne := parseCalibrations()
+	// dayOnePuzzleOne := puzzles.EndingFrequency(parsedDayOne)
+	// fmt.Println(dayOnePuzzleOne)
+	// dayOnePuzzleTwo := puzzles.RepeatedFrequency(parsedDayOne)
+	// fmt.Println(dayOnePuzzleTwo)
 
-	// DAY TWO
-	parsedDayTwo := parsePackageIDs()
-	dayTwoPuzzleOne := puzzles.CheckSum(parsedDayTwo)
-	fmt.Println(dayTwoPuzzleOne)
-	dayTwoPuzzleTwo := puzzles.CommonLetters(parsedDayTwo)
-	fmt.Println(dayTwoPuzzleTwo)
+	// // DAY TWO
+	// parsedDayTwo := parsePackageIDs()
+	// dayTwoPuzzleOne := puzzles.CheckSum(parsedDayTwo)
+	// fmt.Println(dayTwoPuzzleOne)
+	// dayTwoPuzzleTwo := puzzles.CommonLetters(parsedDayTwo)
+	// fmt.Println(dayTwoPuzzleTwo)
 
-	// DAY Three
-	parsedDayThree := parseClaimAreas()
-	dayThreePuzzleOne := puzzles.OverlappingFabric(parsedDayThree)
-	fmt.Println(dayThreePuzzleOne)
-	dayThreePuzzleTwo := puzzles.NonOverlappingClaim(parsedDayThree)
-	fmt.Println(dayThreePuzzleTwo)
+	// // DAY Three
+	// parsedDayThree := parseClaimAreas()
+	// dayThreePuzzleOne := puzzles.OverlappingFabric(parsedDayThree)
+	// fmt.Println(dayThreePuzzleOne)
+	// dayThreePuzzleTwo := puzzles.NonOverlappingClaim(parsedDayThree)
+	// fmt.Println(dayThreePuzzleTwo)
+
+	// DAY Four
+	parsedDayFour := parseDayFour()
+	dayFourPuzzleOneGuard := puzzles.MostAsleepGuard(parsedDayFour)
+	fmt.Println(dayFourPuzzleOneGuard)
+	dayFourPuzzleOneMinute := puzzles.BestMinute(parsedDayFour, dayFourPuzzleOneGuard)
+	fmt.Println(dayFourPuzzleOneMinute)
+	guard, min := puzzles.GuardAsleepMostAtMinute(parsedDayFour)
+	fmt.Printf("   Guard: %v    \n   Minute: %v\n", guard, min)
 
 }
