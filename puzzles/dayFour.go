@@ -143,38 +143,3 @@ func GuardAsleepMostAtMinute(events []Event) (string, int) {
 
 	return sleepyGuard, minute
 }
-
-func MinuteAsleepMostAtMinute(events []Event) string {
-
-	sort.Slice(events, func(i, j int) bool {
-		return events[i].Time.Before(events[j].Time)
-	})
-
-	var currentGuard string
-	var asleepTime time.Time
-	sleepingMinutes := make(map[string]time.Duration)
-
-	for _, e := range events {
-		if strings.Contains(e.Kind, "begins shift") {
-			currentGuard = e.Kind
-		} else if strings.Contains(e.Kind, "wakes up") {
-			sleepMin := e.Time.Sub(asleepTime)
-			sleepingMinutes[currentGuard] += sleepMin
-
-		} else if strings.Contains(e.Kind, "falls asleep") {
-			asleepTime = e.Time
-		}
-
-	}
-
-	var mostSleep time.Duration
-	var sleepyGuard string
-	for gd, dur := range sleepingMinutes {
-		if dur > mostSleep {
-			mostSleep = dur
-			sleepyGuard = gd
-		}
-	}
-
-	return sleepyGuard
-}
