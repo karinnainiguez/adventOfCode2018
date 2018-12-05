@@ -91,3 +91,17 @@ func parseDayFour() []puzzles.Event {
 
 	return newEvents
 }
+
+func parsedayFive() string {
+	csvFile, _ := os.Open("inputs/dayFiveInput.csv")
+	reader := csv.NewReader(bufio.NewReader(csvFile))
+	var claimAreas []string
+	for {
+		line, err := reader.Read()
+		if err == io.EOF {
+			break
+		}
+		claimAreas = append(claimAreas, line[0])
+	}
+	return claimAreas[1]
+}
